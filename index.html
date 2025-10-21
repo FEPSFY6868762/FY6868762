@@ -1,229 +1,171 @@
 <!DOCTYPE html>
-
-<html>
-
-  <head>
-
-    <title>My Daily Activities</title>
-<script type=”text/javascript” src=https://www.gstatic.com/charts/loader.js></script>
-    
-     </head>
-     <img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
-  <h1><b>ENG0018 Computer Laboratory 2025/26</b><h1>
-    <h2>Student URN:6868762 </h2>
-    <hr>
-    <h2 style=”font-family:calibri:”><b>Conference paper: The Future Of Hybrid Engines</b></h2>
-    <hr>
-   
-    <!style for tables>
-       <style>
-               table {
-                 font-family: arial, sans-serif;
-                 border-collapse: collapse;
-                 width: 30%;
-
-               }
-
-               td, th {
-                 border: 1px solid #dddddd;
-                 text-align: left;
-                 padding: 8px;
-
-               }
-
-                tr:nth-child(even) {
-                    background-colour: #dddddd;
-                }
-
-
-
-
-
-         
-       </style>
-                        
-     <style>
-  p.ex1 {
-    margin-left: 250px;
-  }
-     </style>
-  </head>
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-    .mySlides {display:none;}
-    </style>
-
-    <body style="background-color:#FFFFFF;margin-left:50px">
-    </body>
-
-
-          <!table of contents>
-          <table>
-
-            <tr>
-                <th><h3>Table of Contents</h3></th>
-            </tr>
-             <tr>
-              <td><a href="#Abstract">Abstract</td>
-            </tr>
-            <tr>
-              <td><a href="Introduction">Introduction</td>
-            </tr>
-             <tr>
-              <td><a href="Analysis and Discussion">Analysis and Discussion</td>
-            </tr>
-             <tr>
-              <td><a href="References">References</td>
-            </tr>
-          </table>
-
-           <hr>
-          <h3 id="Abstract">Abstract</h3>
-
-           <p class="ex1">
-                <pre>
-                  Put Abstract here
-                </pre>
-           <p/>
-
-
-             <h3 id="Introduction">Introduction</h3>
-               <p class="ex1">
-                <pre id="Introduction">
-                 Put Intro here
-                </pre>
-           <p/>
-
-              <h3 id="Analysis and Discussion">Analysis and Discussion</h3>
-               <p class="ex1">
-               <p id="Analysis and Discussion">
-                <pre>
-                 Put your analysis and discussion here
-                </pre>
-                <p>
-           <p/>
-
-              <h3 id="References">References</h3>
-               <p class="ex1">
-                <pre>
-                 Put your references here
-                </pre>
-           <p/>
-
-
-             
-           </hr>
-
-<html>
+<html lang="en">
 <head>
- <title>Change Button Colour</title>
-</head>
-<body>
- <button id="colorButton">Click me to change colour</button>
- <script>
- // Get a reference to the button element
- var button = document.getElementById("colorButton");
- // Function to change the button color
- function changeColor() {
- // Generate a random color (hexadecimal)
- var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
- 
- // Set the button's background color to the random color
- button.style.backgroundColor = randomColor;
- }
- // Add a click event listener to the button
- button.addEventListener("click", changeColor);
- </script>
+    <meta charset="UTF-8">
+    <title>Future of Hybrid Engines</title>
 
-<!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-    <!-- Last commit time display -->
-<div id="last-updated">Loading last update time...</div>
-<!-- Verify Button -->
-<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
-    Verify Last Modified Time
-</button>
-<script>
-    async function getLastUpdatedTime() {
-        const username = 'FEPSFY6868762';
-        const repo = 'FY6868762';
-       
-        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
-        try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                }
-            });
-            if (!response.ok) {
-                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
-            }
-            const commits = await response.json();
-            if (commits && commits.length > 0) {
-                const lastCommitDate = new Date(commits[0].commit.committer.date);
-               
-                // Displaying the time on load
-                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
-            } else {
-                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
-            }
-        } catch (error) {
-            console.error('Error fetching the last updated time:', error);
-            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+    <!-- External Libraries -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Internal Styles -->
+    <style>
+        body {
+            background-color: #FFFFFF;
+            margin-left: 50px;
+            font-family: Calibri, sans-serif;
         }
-    }
-    // Function to verify the last update time by re-fetching it from the API
-    async function verifyLastUpdatedTime() {
-        document.getElementById('last-updated').innerText = 'Verifying...';
-        await getLastUpdatedTime();
-        alert("Last modified time has been successfully verified from GitHub API.");
-    }
-    // Initial load to display the time on page load
-    window.onload = getLastUpdatedTime;
-</script>
 
+        img {
+            width: 1200px;
+            height: 300px;
+        }
 
- <!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
-<script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction");
-    const AnalysisCount = displayWordCount("Analysis and Discussion");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
-</script>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 30%;
+        }
 
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
 
-</script>
-  
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .ex1 {
+            margin-left: 250px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Banner and Header -->
+    <img src="WebBanner2023.png" alt="Banner">
+    <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
+    <h2>Student URN: 6868762</h2>
+    <hr>
+    <h2><b>Conference paper: The Future Of Hybrid Engines</b></h2>
+    <hr>
+
+    <!-- Table of Contents -->
+    <table>
+        <tr><th><h3>Table of Contents</h3></th></tr>
+        <tr><td><a href="#Abstract">Abstract</a></td></tr>
+        <tr><td><a href="#IntroductionSection">Introduction</a></td></tr>
+        <tr><td><a href="#AnalysisSection">Analysis and Discussion</a></td></tr>
+        <tr><td><a href="#References">References</a></td></tr>
+    </table>
+    <hr>
+
+    <!-- Abstract -->
+    <h3 id="Abstract">Abstract</h3>
+    <pre class="ex1">
+        Put Abstract here.
+    </pre>
+
+    <!-- Introduction -->
+    <h3 id="IntroductionSection">Introduction</h3>
+    <pre class="ex1" id="IntroductionText">
+        Put your introduction here.
+    </pre>
+
+    <!-- Analysis and Discussion -->
+    <h3 id="AnalysisSection">Analysis and Discussion</h3>
+    <pre class="ex1" id="AnalysisText">
+        Put your analysis and discussion here.
+    </pre>
+
+    <!-- References -->
+    <h3 id="References">References</h3>
+    <pre class="ex1">
+        Put your references here.
+    </pre>
+    <hr>
+
+    <!-- Button: Change Colour -->
+    <button id="colorButton">Click me to change colour</button>
+
+    <script>
+        // Random button colour changer
+        const button = document.getElementById("colorButton");
+        button.addEventListener("click", function () {
+            const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            button.style.backgroundColor = randomColor;
+        });
+    </script>
+
+    <!-- Last Updated from GitHub -->
+    <div id="last-updated">Loading last update time...</div>
+    <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+        Verify Last Modified Time
+    </button>
+
+    <script>
+        async function getLastUpdatedTime() {
+            const username = 'FEPSFY6868762';
+            const repo = 'FY6868762';
+            const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: { 'Accept': 'application/vnd.github.v3+json' }
+                });
+
+                if (!response.ok) throw new Error(`Error fetching data: ${response.statusText}`);
+
+                const commits = await response.json();
+                if (commits.length > 0) {
+                    const lastCommitDate = new Date(commits[0].commit.committer.date);
+                    document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+                } else {
+                    document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+                }
+            } catch (error) {
+                console.error(error);
+                document.getElementById('last-updated').innerText = 'Error fetching update time.';
+            }
+        }
+
+        async function verifyLastUpdatedTime() {
+            document.getElementById('last-updated').innerText = 'Verifying...';
+            await getLastUpdatedTime();
+            alert("Last modified time has been successfully verified from GitHub API.");
+        }
+
+        window.onload = function () {
+            getLastUpdatedTime();
+            displayTotalWordCount(); // Run word count on load
+        };
+    </script>
+
+    <!-- Word Count -->
+    <p id="totalWordCount" style="font-weight: bold;"></p>
+
+    <script>
+        function displayWordCount(sectionId) {
+            const text = document.getElementById(sectionId).textContent;
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+            return words.length;
+        }
+
+        function displayTotalWordCount() {
+            const introCount = displayWordCount("IntroductionText");
+            const analysisCount = displayWordCount("AnalysisText");
+            const totalCount = introCount + analysisCount;
+            document.getElementById("totalWordCount").innerText = `Total word count: ${totalCount}`;
+        }
+    </script>
+
 </body>
 </html>
-    
-             
-           </html>
